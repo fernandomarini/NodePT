@@ -30,12 +30,13 @@ const getBookId = (req,res) => {
 const postBooks = (req,res) => {
     let respuesta;
     if( book === null){
-        newBook = new Book(req.body.id_book, 
+        newBook = new Book(
                         req.body.title,
                         req.body.type,
                         req.body.author,
-                        req.body.price,
                         req.body.photo,
+                        req.body.price,                        
+                        req.body.id_book, 
                         req.body.id_user)
         books.push(newBook);
         respuesta = { error: false, codigo: 200, mensaje: "Libro creado con exito"};
